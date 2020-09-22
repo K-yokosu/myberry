@@ -1,0 +1,244 @@
+.fieldList {
+  background: $contents_common_back;
+  height: $contents_main_height;
+  padding: $common_padd;
+  color: $common_subColor;
+  box-sizing: border-box;
+  &__title {
+    font-size: $topTitle;
+  }
+  &__adressContainer {
+    position: relative;
+    height: 45vh;
+    padding: 50px 0;
+    border-bottom: 1px solid $common_subColor;
+    box-sizing: border-box;
+  }
+  &__storeImage {
+    position: absolute;
+    top: 5vh;
+    left: 0;
+    height: 35vh;
+    width: 40%;
+  }
+  &__imgFilter {
+    position: absolute;
+    top: 7.5vh;
+    left: 0;
+    height: 30vh;
+    width: 40%;
+    background: rgba($common_subColor, 0.4);
+    p {
+      position: absolute;
+      top: 14vh;
+      left: 33%;
+      font-size: 40px;
+      color: rgba($common_mainColor, 0.7);
+    }
+  }
+  &__adrDetail {
+    position: absolute;
+    top: 2vh;
+    right: 0;
+    height: 35vh;
+    width: 53%;
+  }
+  &__adtTitle {
+    font-size: 25px;
+  }
+  &__sentenceBox {
+    padding: 3vh 0 1vh 0;
+  }
+  &__sentence {
+    line-height: 3vh;
+    font-size: 16px;
+  }
+  &__adressBox {
+    padding-bottom: 3vh;
+  }
+  &__adrList {
+    line-height: 3vh;
+    font-size: 16px;
+  }
+  &__mapBox__active {
+    position: relative;
+    height: 2vh;
+    a {
+      position: absolute;
+      top: 2px;
+      left: 30px;
+      font-size: 16px;
+      color: $common_subColor;
+      text-decoration: underline;
+      z-index: 1;
+    }
+  }
+  &__mapBox {
+    a {
+      z-index: 0;
+    }
+  }
+  &__iconMap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+  }
+  &__shopListContainer {
+    height: 23vh;
+    padding: 3vh 3%;
+    box-sizing: border-box;
+  }
+  &__shopListTitle {
+    font-size: 25px;
+  }
+  &__shopListBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 18vh;
+    width: 50%;
+    padding: 1vh 1%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    a {
+      position: relative;
+      display: block;
+      line-height: 6vh;
+      font-size: 16px;
+      color: $common_subColor;
+      transition: $field_shopList_transition;
+      z-index: 1;
+      .fieldList__shopListUnderLine {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background: $common_subColor;
+        transition: $field_shopList_transition;
+      }
+      span {
+        display: inline-block;
+        position: absolute;
+        top: 3vh;
+        right: 5px;
+        width: 8px;
+        height: 2px;
+        transition: $field_shopList_transition;
+        &:nth-of-type(1) {
+          transform: translateY(-2px) rotate(45deg);
+        }
+        &:nth-of-type(2) {
+          transform: translateY(3px) rotate(-45deg);
+        }
+      }
+      &:hover {
+        transition: $field_shopList_transition;
+        .fieldList__shopListUnderLine {
+          width: 100%;
+          transition: $field_shopList_transition;
+        }
+        span {
+          background: $common_subColor;
+          transition: $field_shopList_transition;
+        }
+      }
+    }
+  }
+  &__shopListBoxLine {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+  }
+  @include mq(xl) {
+    &__imgFilter {
+      p {
+        top: 14vh;
+        left: 28%;
+        font-size: 30px;
+      }
+    }
+  }
+  @include mq(md) {
+    padding: $common_padd_md;
+  }
+  @include mq() {
+    &__title {
+      font-size: $topTitle_sm;
+    }
+    &__adressContainer {
+      position: relative;
+      height: 53vh;
+      padding: 50px 0;
+      border-bottom: 1px solid $common_subColor;
+      box-sizing: border-box;
+    }
+    &__storeImage {
+      position: absolute;
+      top: 2vh;
+      left: 10%;
+      height: 16vh;
+      width: 80%;
+    }
+    &__imgFilter {
+      top: 4vh;
+      left: 10%;
+      height: 12vh;
+      width: 80%;
+      p {
+        top: 4vh;
+        left: 28%;
+      }
+    }
+    &__adrDetail {
+      top: 20vh;
+      left: 0;
+      width: 100%;
+    }
+    &__adtTitle {
+      font-size: 20px;
+    }
+    &__sentenceBox {
+      padding: 10px 0;
+    }
+    &__sentence {
+      line-height: 18px;
+      font-size: 14px;
+    }
+    &__adressBox {
+      padding-bottom: 10px;
+    }
+    &__adrList {
+      line-height: 18px;
+      font-size: 14px;
+    }
+    &__mapBox__active {
+      a {
+        left: 20px;
+        font-size: 12px;
+      }
+    }
+    &__iconMap {
+      height: 15px;
+      width: 15px;
+    }
+    &__shopListContainer {
+      height: 25vh;
+      padding: 10px 0% 0 0%;
+    }
+    &__shopListTitle {
+      font-size: 20px;
+    }
+    &__shopListBox {
+      height: 20vh;
+      width: 100%;
+      padding: 1vh 1%;
+      a {
+        line-height: 6vh;
+        font-size: 16px;
+      }
+    }
+  }
+}

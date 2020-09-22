@@ -1,0 +1,63 @@
+.footer {
+  height: 68vh;
+  padding: $footer_padd;
+  box-sizing: border-box;
+  color: $common_mainColor;
+  background: rgb(73, 70, 70);
+  &__title {
+    font-size: $topTitle;
+  }
+  &__linkContainerContainer__active {
+    display: flex;
+    flex-direction: row;
+    height: 38vh;
+    width: 100%;
+    padding: 5vh 0;
+    box-sizing: border-box;
+  }
+  &__linkContainer {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10%;
+    box-sizing: border-box;
+    a {
+      line-height: 4.5vh;
+      color: $common_mainColor;
+      z-index: 1;
+    }
+  }
+  &__linkContainerContainer {
+    .footer__linkContainer {
+      a {
+        z-index: 0;
+      }
+    }
+  }
+  @include mq(xl) {
+    &__linkContainerContainer__active {
+      justify-content: space-between;
+    }
+    &__linkContainer {
+      padding-right: 0%;
+    }
+  }
+  @include mq(md) {
+    padding: $footer_padd_md;
+  }
+  @include mq() {
+    &__title {
+      font-size: $topTitle_sm;
+    }
+    &__linkContainer {
+      a {
+        line-height: 4.5vh;
+        font-size: 12px;
+      }
+    }
+    p {
+      small {
+        font-size: 14px;
+      }
+    }
+  }
+}

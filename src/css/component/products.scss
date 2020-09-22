@@ -1,0 +1,139 @@
+.products {
+  height: $contents_main_height;
+  padding: $common_padd;
+  box-sizing: border-box;
+  color: $common_subColor;
+  background: $contents_common_back;
+  &__title {
+    font-size: $topTitle;
+  }
+  &__shelf {
+    display: flex;
+    flex-direction: row;
+    height: 60vh;
+    padding: 40px 10px;
+    box-sizing: border-box;
+    &__active {
+      .products__partBox {
+        z-index: 0;
+        transition: all 0.1s;
+      }
+    }
+  }
+  &__partBox {
+    height: 50vh;
+    width: 30%;
+    box-sizing: border-box;
+    transition: all 0.8s;
+    z-index: 1;
+    &:nth-of-type(2) {
+      margin: 0 5%;
+    }
+    a {
+      display: inline-block;
+      transition: $prod_partBo_transition;
+    }
+    a:hover {
+      box-shadow: 0 0 10px rgba($common_subColor, 0.3);
+      transform: scale(1.03);
+      transition: $prod_partBo_transition;
+    }
+  }
+  &__boxFrame {
+    height: 30vh;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: $products_partBox_background;
+    box-sizing: border-box;
+    img {
+      height: 28vh;
+      width: 100%;
+    }
+  }
+  &__explanation {
+    height: 20vh;
+    width: 100%;
+    padding: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-sizing: border-box;
+    background: $products_partBox_background;
+    li {
+      color: $common_subColor;
+      &:nth-of-type(1) {
+        font-size: 14px;
+      }
+      &:nth-of-type(2) {
+        font-size: 20px;
+        padding: 10px 0 20px 0;
+      }
+      &:nth-of-type(3) {
+        font-size: 14px;
+        color: rgb(196, 206, 62);
+      }
+    }
+  }
+  &__allBox__active {
+    position: relative;
+    a {
+      display: block;
+      position: relative;
+      line-height: 5vh;
+      color: $common_subColor;
+      border: 2px solid $common_subColor;
+      transition: $arrowBotton_transition;
+      text-align: center;
+      z-index: 1;
+      &:hover {
+        color: $common_mainColor;
+        background: $common_subColor;
+        transition: $arrowBotton_transition;
+        span {
+          background: $common_mainColor;
+        }
+      }
+      span {
+        display: inline-block;
+        position: absolute;
+        top: 2.5vh;
+        right: 5px;
+        width: 13px;
+        height: 3px;
+        background: $common_subColor;
+        &:nth-of-type(1) {
+          transform: translateY(-4px) rotate(45deg);
+        }
+        &:nth-of-type(2) {
+          transform: translateY(4px) rotate(-45deg);
+        }
+      }
+    }
+  }
+  &__allBox {
+    a {
+      z-index: 0;
+    }
+  }
+  @include mq(md) {
+    padding: $common_padd_md;
+    &__partBox {
+      width: 45%;
+      margin: 0 0 0 5%;
+      &:nth-of-type(3) {
+        display: none;
+      }
+    }
+  }
+  @include mq() {
+    &__title {
+      font-size: $topTitle_sm;
+    }
+    &__partBox {
+      width: 90%;
+      &:nth-of-type(2) {
+        display: none;
+      }
+    }
+  }
+}

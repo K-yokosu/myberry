@@ -1,0 +1,99 @@
+.topImages {
+  position: relative;
+  height: $contents_main_height;
+  width: $contents_main_width;
+  background: $common_subColor;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $contents_main_height;
+    width: $contents_main_width;
+    animation-name: album;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+  }
+  &__item2 {
+    animation-delay: 5s;
+  }
+  &__item3 {
+    animation-delay: 10s;
+  }
+  &__item4 {
+    animation-delay: 15s;
+  }
+  &__item5 {
+    animation-delay: 20s;
+  }
+  h2 {
+    position: absolute;
+    top: 45vh;
+    right: 18%;
+    font-size: 30px;
+    color: $common_mainColor;
+    animation-name: titles;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+  }
+  &__title2 {
+    animation-delay: 5s;
+  }
+  &__title3 {
+    animation-delay: 10s;
+  }
+  &__title4 {
+    animation-delay: 15s;
+  }
+  &__title5 {
+    animation-delay: 20s;
+  }
+  @include mq(lg) {
+    h2 {
+      right: 10%;
+    }
+  }
+  @include mq(md) {
+    h2 {
+      right: 15%;
+      font-size: 25px;
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+    }
+  }
+}
+
+@keyframes album {
+  0% {
+    opacity: 0;
+  }
+
+  2.5% {
+    opacity: 1;
+  }
+
+  17.5% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+}
+
+@keyframes titles {
+  0% {
+    opacity: 0;
+  }
+
+  3.0% {
+    opacity: 1;
+  }
+
+  17.0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+}

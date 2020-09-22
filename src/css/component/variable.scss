@@ -1,0 +1,124 @@
+/*
+
+** 幅・高さ・余白(margin&padding)・位置 **
+<<=================================================================>>
+*/
+
+/* position */
+/* top */
+$nav_manuFG_p_top: 40vh;
+$nav_manuSG_p_top: 90vh;
+$hamManu_position: 60px;
+$hamManu_position__md: 50px;
+$hamManu_position__sm: 40px;
+
+/* bottom */
+
+/* left */
+$nav_manuG_p_left: 36px;
+
+/* right */
+
+/* height */
+$contents_main_height: 100vh;
+$hambargerManu_height: 20px;
+$hambargerManu_stick_height: 2px;
+$hambargerManu_Container_span_height: 2px;
+
+/* width */
+$contents_main_width: 100%;
+$nav_contents_wid: 70%;
+$hambargerManu_width: 50px;
+$hambargerManu_width_md: 40px;
+$hambargerManu_stick_width: 100%;
+$hambargerManuConCon_width: 55%;
+$hambargerManuConCon_width_md: 80%;
+$hambargerManu_Container_span_width: 50%;
+$hambargerManu_Container_span_width_md: 80%;
+
+/* padding */
+$nav_manuList_FG_padding: 7px 0;
+$nav_manuList_SG_padding: 5px 0;
+$hambargerManu_Container_padding: 150px 50px;
+$hambargerManu_manuList_padding: 10px 20px;
+$hambargerManu_manuList_padding_sm: 10px 10px;
+$common_padd: 15vh 8% 10vh 25%;
+$common_padd_md: 15vh 8% 10vh 8%;
+$support_padd: 10vh 8% 5vh 25%;
+$support_padd_md: 10vh 8% 5vh 8%;
+$footer_padd: 10vh 8% 5vh 25%;
+$footer_padd_md: 10vh 8% 5vh 8%;
+
+/* margin */
+$hambargerManu_margin: 70px 70px 0 0;
+$hambargerManu_Container_span_margin: 40px;
+$hambargerManu_SubContainer_margin: 15px auto;
+
+/* 
+
+
+** フォントサイズ **
+<<=================================================================>>
+*/
+/* font-size */
+$logo_fs: 190px;
+$nav_main_fs: 19px;
+$nav_main_fs_ss: 16px;
+$nav_sub_fs: 14px;
+$topTitle: 45px;
+$topTitle_sm: 35px;
+/* 
+
+
+** 文字色・背景 **
+<<=================================================================>>
+*/
+/* color */
+$common_mainColor: #fff;
+$common_subColor: #000;
+$hambargerManu_manuList_hover: #999;
+
+/* background */
+$nav_manuList_background: rgba(
+  $color: #888888,
+  $alpha: 0.7,
+);
+$contents_common_back: rgb(228, 222, 222);
+$products_partBox_background: rgba(
+  $color: #f8fbfb,
+  $alpha: 0.8,
+);
+
+/* 
+
+
+** アニメーション系 **
+<<=================================================================>>
+*/
+
+/* transition */
+$nav_manuList_transition: all 0.6s;
+$hambarger_transition: all 0.5s;
+$prod_partBo_transition: all 0.5s;
+$arrowBotton_transition: all 0.4s;
+$field_shopList_transition: all 0.3s;
+
+/* 
+
+
+** メディアクエリ **
+<<=================================================================>>
+*/
+
+$breakpoints: (
+  'sm': 'screen and (max-width: 414px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1000px)',
+  'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

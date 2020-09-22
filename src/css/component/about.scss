@@ -1,0 +1,66 @@
+.about {
+  position: relative;
+  height: $contents_main_height;
+  color: $common_mainColor;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $contents_main_height;
+    width: $contents_main_width;
+  }
+  &__title {
+    font-size: $topTitle;
+    position: absolute;
+    top: 15vh;
+    left: 25%;
+  }
+  &__sentence {
+    line-height: 50px;
+    position: absolute;
+    top: 30vh;
+    left: 25%;
+    p {
+      font-size: 20px;
+      &:nth-of-type(2) {
+        padding-top: 50px;
+        font-size: 30px;
+      }
+    }
+  }
+  &__backColor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $contents_main_height;
+    width: $contents_main_width;
+    background: rgba($common_subColor, 0.5);
+  }
+  @include mq(md) {
+    &__title {
+      top: 30vh;
+      left: 8%;
+    }
+    &__sentence {
+      top: 40vh;
+      left: 8%;
+    }
+  }
+  @include mq() {
+    &__title {
+      top: 25vh;
+      font-size: $topTitle_sm;
+    }
+    &__sentence {
+      top: 35vh;
+      line-height: 35px;
+      p {
+        font-size: 15px;
+        &:nth-of-type(2) {
+          padding-top: 50px;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.support {
+  height: 60vh;
+  padding: $support_padd;
+  box-sizing: border-box;
+  color: $common_subColor;
+  background: rgb(209, 199, 199);
+  &__title {
+    font-size: $topTitle;
+  }
+  &__ContainerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 37vh;
+    width: 50%;
+    padding-top: 7vh;
+    box-sizing: border-box;
+    &__active {
+      .support__arrowButton {
+        a {
+          z-index: 0;
+        }
+      }
+    }
+  }
+  &__Container {
+    height: 30vh;
+    width: 47%;
+    &Title {
+      font-size: 22px;
+    }
+  }
+  &__Sentence {
+    line-height: 2.5vh;
+    padding: 3vh 0;
+    font-size: 16px;
+  }
+  &__arrowButton {
+    position: relative;
+    a {
+      display: block;
+      position: relative;
+      line-height: 5vh;
+      border: 2px solid $common_subColor;
+      box-sizing: border-box;
+      font-size: 12px;
+      color: $common_subColor;
+      transition: $arrowBotton_transition;
+      text-align: center;
+      z-index: 1;
+      &:hover {
+        color: $common_mainColor;
+        background: $common_subColor;
+        transition: $arrowBotton_transition;
+        span {
+          background: $common_mainColor;
+        }
+      }
+      span {
+        display: inline-block;
+        position: absolute;
+        top: 2.3vh;
+        right: 5px;
+        width: 8px;
+        height: 2px;
+        background: $common_subColor;
+        &:nth-of-type(1) {
+          transform: translateY(-2px) rotate(45deg);
+        }
+        &:nth-of-type(2) {
+          transform: translateY(3px) rotate(-45deg);
+        }
+      }
+    }
+  }
+  @include mq(lg) {
+    &__ContainerContainer {
+      width: 65%;
+    }
+  }
+  @include mq(md) {
+    padding: $support_padd_md;
+  }
+  @include mq() {
+    &__title {
+      font-size: $topTitle_sm;
+    }
+    &__ContainerContainer {
+      height: 37vh;
+      width: 100%;
+      padding-top: 5vh;
+    }
+    &__Container {
+      height: 30vh;
+      width: 47%;
+      &Title {
+        font-size: 20px;
+      }
+    }
+    &__Sentence {
+      font-size: 14px;
+    }
+    &__arrowButton {
+      a {
+        font-size: 10px;
+        span {
+          top: 2.5vh;
+          width: 6px;
+          &:nth-of-type(1) {
+            transform: translateY(-2px) rotate(45deg);
+          }
+          &:nth-of-type(2) {
+            transform: translateY(2px) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}

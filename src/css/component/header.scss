@@ -1,0 +1,236 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: $contents_main_height;
+  width: $contents_main_width;
+  z-index: 1;
+  &__logoTitle {
+    position: absolute;
+    left: $nav_manuG_p_left;
+    width: $nav_contents_wid;
+    box-sizing: border-box;
+    a {
+      font-size: $logo_fs;
+      color: $common_mainColor;
+    }
+    &__colReverse {
+      a {
+        color: $common_subColor;
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 240px;
+    border-right: 1px solid #aaa;
+  }
+
+  &__manuFirstGroup {
+    position: absolute;
+    top: $nav_manuFG_p_top;
+    left: $nav_manuG_p_left;
+    width: $nav_contents_wid;
+    a {
+      color: $common_mainColor;
+      transition: $nav_manuList_transition;
+      &:hover {
+        background: $nav_manuList_background;
+        transition: $nav_manuList_transition;
+      }
+    }
+    &__colReverse {
+      a {
+        color: $common_subColor;
+      }
+    }
+  }
+  &__manuFGList {
+    padding: $nav_manuList_FG_padding;
+    box-sizing: border-box;
+    font-size: $nav_main_fs;
+  }
+  &__manuSecondGroup {
+    position: absolute;
+    top: $nav_manuSG_p_top;
+    left: $nav_manuG_p_left;
+    width: $nav_contents_wid;
+    a {
+      color: $common_mainColor;
+      transition: $nav_manuList_transition;
+      &:hover {
+        background: $nav_manuList_background;
+        transition: $nav_manuList_transition;
+      }
+    }
+    &__colReverse {
+      a {
+        color: $common_subColor;
+      }
+    }
+  }
+  &__manuSGList {
+    padding: $nav_manuList_SG_padding;
+    box-sizing: border-box;
+    font-size: $nav_sub_fs;
+  }
+  &__hamManu {
+    display: inline-block;
+    position: absolute;
+    top: $hamManu_position;
+    right: $hamManu_position;
+    height: $hambargerManu_height;
+    width: $hambargerManu_width;
+    // margin: $hambargerManu_margin;
+    z-index: 3;
+    &__active .header__stick1 {
+      transform: translateY(10px) rotate(-45deg);
+      background: $common_mainColor;
+    }
+    &__active .header__stick2 {
+      transform: translateY(-6px) rotate(45deg);
+      background: $common_mainColor;
+    }
+  }
+  &__stick1 {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    height: $hambargerManu_stick_height;
+    width: $hambargerManu_stick_width;
+    background: $common_mainColor;
+    transition: $hambarger_transition;
+    &__colReverse {
+      background: $common_subColor;
+    }
+  }
+  &__stick2 {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    height: $hambargerManu_stick_height;
+    width: $hambargerManu_stick_width;
+    background: $common_mainColor;
+    transition: $hambarger_transition;
+    &__colReverse {
+      background: $common_subColor;
+    }
+  }
+  &__hamManuFilm {
+    position: absolute;
+    top: 0;
+    right: -$contents_main_width;
+    height: $contents_main_height;
+    width: $contents_main_width;
+    background: rgba($common_subColor, 0.5);
+    transition: $hambarger_transition;
+    &__active {
+      transition: $hambarger_transition;
+      transform: translateX(-$contents_main_width);
+      z-index: 1;
+    }
+  }
+  &__hamManuContainerContainer {
+    position: absolute;
+    top: 0;
+    right: -$hambargerManuConCon_width;
+    height: $contents_main_height;
+    width: $hambargerManuConCon_width;
+    background: $common_subColor;
+    transition: $hambarger_transition;
+    &__active {
+      transition: $hambarger_transition;
+      transform: translateX(-$hambargerManuConCon_width);
+      z-index: 2;
+    }
+  } /*  見た　*/
+  &__hamManuContainer {
+    padding: $hambargerManu_Container_padding;
+    span {
+      display: inline-block;
+      height: $hambargerManu_Container_span_height;
+      width: $hambargerManu_Container_span_width;
+      background: $common_mainColor;
+      &:nth-of-type(1) {
+        margin-top: $hambargerManu_Container_span_margin;
+      }
+      &:nth-of-type(2) {
+        margin-bottom: $hambargerManu_Container_span_margin;
+      }
+    }
+  }
+  &__hamManuSubContainer {
+    display: flex;
+    flex-direction: row;
+    margin: $hambargerManu_SubContainer_margin;
+  }
+  &__hamManuItem {
+    padding: $hambargerManu_manuList_padding;
+    box-sizing: border-box;
+    a {
+      font-size: $nav_main_fs;
+      color: $common_mainColor;
+      transition: $nav_manuList_transition;
+      &:hover {
+        color: $hambargerManu_manuList_hover;
+        text-decoration: underline;
+        transition: $nav_manuList_transition;
+      }
+    }
+  }
+  @include mq(lg) {
+    &__nav {
+      width: 200px;
+    }
+    &__logoTitle {
+      a {
+        font-size: 150px;
+      }
+    }
+  }
+  @include mq(md) {
+    &__nav {
+      display: none;
+    }
+    &__logoTitle {
+      a {
+        font-size: 120px;
+      }
+    }
+    &__hamManu {
+      top: $hamManu_position__md;
+      right: $hamManu_position__md;
+      width: $hambargerManu_width_md;
+    }
+    &__hamManuContainerContainer {
+      right: -$hambargerManuConCon_width_md;
+      width: $hambargerManuConCon_width_md;
+      &__active {
+        transform: translateX(-$hambargerManuConCon_width_md);
+      }
+    }
+    &__hamManuContainer {
+      span {
+        width: $hambargerManu_Container_span_width_md;
+      }
+    }
+  }
+  @include mq() {
+    &__logoTitle {
+      a {
+        font-size: 80px;
+      }
+    }
+    &__hamManu {
+      top: $hamManu_position__sm;
+      right: $hamManu_position__sm;
+    }
+    &__hamManuItem {
+      padding: $hambargerManu_manuList_padding_sm;
+    }
+  }
+}
