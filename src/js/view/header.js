@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import { Hambarger } from '../component/hambarger';
 
 export const Header = () => {
@@ -9,29 +9,29 @@ export const Header = () => {
       <section>
         <header class="header">
           <h1 class="header__logoTitle">
-            <a href="index.html">m</a>
+            <Link to="/">m</Link>
           </h1>
           <nav class="header__nav">
             <ul class="header__manuFirstGroup">
               <li class="header__manuFGList">
-                <a href="">{manuList[0]}</a>
+                <Link to="/">{manuList[0]}</Link>
               </li>
               <li class="header__manuFGList">
-                <a href="">{manuList[1]}</a>
+                <Link to="/">{manuList[1]}</Link>
               </li>
               <li class="header__manuFGList">
-                <a href="">{manuList[2]}</a>
+                <Link to="/">{manuList[2]}</Link>
               </li>
               <li class="header__manuFGList">
-                <a href="">{manuList[3]}</a>
+                <Link to="/">{manuList[3]}</Link>
               </li>
             </ul>
             <ul class="header__manuSecondGroup">
               <li class="header__manuSGList">
-                <a href="">{manuList[4]}</a>
+                <Link to="/login">{manuList[4]}</Link>
               </li>
               <li class="header__manuSGList">
-                <a href="">{manuList[5]}</a>
+                <Link to="/">{manuList[5]}</Link>
               </li>
             </ul>
           </nav>

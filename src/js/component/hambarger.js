@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Hambarger = (props) => {
   return (
@@ -11,24 +12,24 @@ export const Hambarger = (props) => {
       <div class="header__hamManuContainerContainer">
         <ul class="header__hamManuContainer">
           <li class="header__hamManuItem">
-            <a href="">{props.hamManuList[0]}</a>
+            <Link to="/">{props.hamManuList[0]}</Link>
           </li>
           <li class="header__hamManuItem">
-            <a href="">{props.hamManuList[1]}</a>
+            <Link to="/">{props.hamManuList[1]}</Link>
           </li>
           <li class="header__hamManuItem">
-            <a href="">{props.hamManuList[2]}</a>
+            <Link to="/">{props.hamManuList[2]}</Link>
           </li>
           <li class="header__hamManuItem">
-            <a href="">{props.hamManuList[3]}</a>
+            <Link to="/">{props.hamManuList[3]}</Link>
           </li>
           <span></span>
           <div class="header__hamManuSubContainer">
             <li class="header__hamManuItem">
-              <a href="">{props.hamManuList[4]}</a>
+              <Link to="/login">{props.hamManuList[4]}</Link>
             </li>
             <li class="header__hamManuItem">
-              <a href="">{props.hamManuList[5]}</a>
+              <Link to="/">{props.hamManuList[5]}</Link>
             </li>
           </div>
           <span></span>
